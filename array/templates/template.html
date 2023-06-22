@@ -1,0 +1,65 @@
+<!-- This is an HTML file that displays a 10x10 table. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This meta tag refreshes the page every 10 seconds. -->
+	<meta http-equiv="refresh" content="10">
+	<!-- This is the title of the HTML document. -->
+	<title>10x10 Table</title>
+	<style>
+		/* This CSS rule sets the border-collapse property of the table element to collapse and the width property to 100%. */
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		/* This CSS rule sets the border property of the td and th elements to 1 pixel wide and black in color, the text-align property to center, and the padding property to 8 pixels. */
+		td, th {
+			border: 1px solid black;
+			text-align: center;
+			padding: 8px;
+		}
+		/* This CSS rule sets the background color of the th elements to a light gray. */
+		th {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+<!-- This is the opening tag for the table element. -->
+<table>
+	<!-- This is the opening tag for the table header section. -->
+	<thead>
+	<!-- These are table header cells that display the text "raw\column" and the numbers 1 to 10. -->
+	<tr>
+		<th>raw\column</th>
+		<th>c1</th>
+		<th>c2</th>
+		<th>c3</th>
+		<th>c4</th>
+		<th>c5</th>
+		<th>c6</th>
+		<th>c7</th>
+		<th>c8</th>
+		<th>c9</th>
+		<th>c10</th>
+	</tr>
+	</thead>
+	<!-- This is the opening tag for the table body section. -->
+	<tbody>
+	<!-- This is a Go template syntax that loops through the rows of the table data. -->
+	{{range $i, $row := .TableData}}
+	<!-- These are table header cells that display the row number and table data cells that display the value of each cell. -->
+	<tr>
+		<th>{{$i}}</th>
+		{{range $j, $cell := $row}}
+		<td>{{$cell}}</td>
+		{{end}}
+	</tr>
+	{{end}}
+	</tbody>
+	<!-- This is the closing tag for the table body section. -->
+</table>
+<!-- This is the closing tag for the table element. -->
+</body>
+<!-- This is the closing tag for the HTML document. -->
+</html>
